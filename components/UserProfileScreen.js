@@ -1,52 +1,55 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-
-
-const UserProfileScreen = ({navigation}) => {
+const UserProfileScreen = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Pantalla de inicio</Text>
+            <Image source={require("../assets/7d753abc69dbf8e7b6e64487246e9f62.jpg")} style={styles.image} />
+            <Text style={styles.text}>Usuario Pepito</Text>
             
             <View style={styles.fixToText}>
-                <TouchableOpacity 
-                    style={[styles.button, { backgroundColor: "#e4491c" }]}
-                    onPress={() => navigation.navigate('Savings')}
-                >
-                    <Ionicons name="wallet-outline" size={24} color="white" />
-                    <Text style={styles.buttonText}>Ahorros</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity 
-                    style={[styles.button, { backgroundColor: "#2c85c0" }]}
-                    onPress={() => navigation.navigate('Profile')}
-                >
+                <View style={[styles.button, { backgroundColor: "#F76C6C" }]}>
                     <Ionicons name="person-outline" size={24} color="white" />
-                    <Text style={styles.buttonText}>Perfil</Text>
-                </TouchableOpacity>
+                    <Text style={styles.buttonText}>Nombre</Text>
+                </View>
+                <View style={[styles.button, { backgroundColor: "#00A896" }]}>
+                    <Text style={styles.buttonText}>Daniel</Text>
+                </View>
             </View>
 
             <View style={styles.fixToText}>
-                <TouchableOpacity 
-                    style={[styles.button, { backgroundColor: "#4CAF50" }]}
-                    onPress={() => alert("Configuration")}
-                >
-                    <Ionicons name="settings-outline" size={24} color="white" />
-                    <Text style={styles.buttonText}>Configuración</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity 
-                    style={[styles.button, { backgroundColor: "#D32F2F" }]}
-                    onPress={() => alert("Leave")}
-                >
-                    <Ionicons name="exit-outline" size={24} color="white" />
-                    <Text style={styles.buttonText}>Salir</Text>
-                </TouchableOpacity>
+                <View style={[styles.button, { backgroundColor: "#F76C6C" }]}>
+                    <Ionicons name="id-card-outline" size={24} color="white" />
+                    <Text style={styles.buttonText}>Apellido</Text>
+                </View>
+                <View style={[styles.button, { backgroundColor: "#00A896" }]}>
+                    <Text style={styles.buttonText}>Villarreal</Text>
+                </View>
             </View>
 
-            <StatusBar style="light" />
+            <View style={styles.fixToText}>
+                <View style={[styles.button, { backgroundColor: "#F76C6C" }]}>
+                    <Ionicons name="mail-outline" size={24} color="white" />
+                    <Text style={styles.buttonText}>Email</Text>
+                </View>
+                <View style={[styles.button, { backgroundColor: "#00A896" }]}>
+                    <Text style={styles.buttonText}>dv9565@gmail.com</Text>
+                </View>
+            </View>
+
+            <View style={styles.fixToText}>
+                <View style={[styles.button, { backgroundColor: "#F76C6C" }]}>
+                    <Ionicons name="call-outline" size={24} color="white" />
+                    <Text style={styles.buttonText}>Número</Text>
+                </View>
+                <View style={[styles.button, { backgroundColor: "#00A896" }]}>
+                    <Text style={styles.buttonText}>618-156-3424</Text>
+                </View>
+            </View>
+
+            <StatusBar style="black" />
         </View>
     );
 };
@@ -56,19 +59,25 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#538a95',
+        backgroundColor: '#2A2D34',
         paddingHorizontal: 16,
     },
     text: {
         fontSize: 30,
         color: 'white',
         marginBottom: 20,
+        marginTop: 20,
+        fontWeight: "bold",
     },
     fixToText: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         width: '100%',
         marginBottom: 10,
+        paddingTop: 20,
+        paddingBottom: 20,
+        backgroundColor: "#3E4C59",
+        borderRadius: 15,
     },
     button: {
         flexDirection: 'row',
@@ -84,6 +93,14 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         marginLeft: 10,
+    },
+    image: {
+        width: 200,
+        height: 200,
+        resizeMode: "contain",
+        borderRadius: 100,
+        borderWidth: 3,
+        borderColor: "#00A896",
     },
 });
 

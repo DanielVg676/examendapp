@@ -3,50 +3,52 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-
-
-const ConfigScreen = ({navigation}) => {
+const ConfigScreen = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Pantalla de inicio</Text>
+            <Text style={styles.text}>Configuración</Text>
             
             <View style={styles.fixToText}>
                 <TouchableOpacity 
                     style={[styles.button, { backgroundColor: "#e4491c" }]}
-                    onPress={() => navigation.navigate('Savings')}
+                    onPress={() => alert("Cambiando el tema")}
                 >
-                    <Ionicons name="wallet-outline" size={24} color="white" />
-                    <Text style={styles.buttonText}>Ahorros</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity 
-                    style={[styles.button, { backgroundColor: "#2c85c0" }]}
-                    onPress={() => navigation.navigate('Profile')}
-                >
-                    <Ionicons name="person-outline" size={24} color="white" />
-                    <Text style={styles.buttonText}>Perfil</Text>
+                    <Ionicons name="color-palette-outline" size={24} color="white" />
+                    <Text style={styles.buttonText}>Cambiar Tema</Text>
                 </TouchableOpacity>
             </View>
 
             <View style={styles.fixToText}>
                 <TouchableOpacity 
                     style={[styles.button, { backgroundColor: "#4CAF50" }]}
-                    onPress={() => alert("Configuration")}
+                    onPress={() => alert("Cambiando Idioma")}
                 >
-                    <Ionicons name="settings-outline" size={24} color="white" />
-                    <Text style={styles.buttonText}>Configuración</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity 
-                    style={[styles.button, { backgroundColor: "#D32F2F" }]}
-                    onPress={() => alert("Leave")}
-                >
-                    <Ionicons name="exit-outline" size={24} color="white" />
-                    <Text style={styles.buttonText}>Salir</Text>
+                    <Ionicons name="globe-outline" size={24} color="white" />
+                    <Text style={styles.buttonText}>Idioma</Text>
                 </TouchableOpacity>
             </View>
 
-            <StatusBar style="light" />
+            <View style={styles.fixToText}>
+                <TouchableOpacity 
+                    style={[styles.button, { backgroundColor: "#FFC107" }]}
+                    onPress={() => alert("Cambiando contraseña")}
+                >
+                    <Ionicons name="key-outline" size={24} color="white" />
+                    <Text style={styles.buttonText}>Cambiar Contraseña</Text>
+                </TouchableOpacity>
+            </View>
+
+            <View style={styles.fixToText}>
+                <TouchableOpacity 
+                    style={[styles.button, { backgroundColor: "#D32F2F" }]}
+                    onPress={() => alert("Cerrando sesión")}
+                >
+                    <Ionicons name="log-out-outline" size={24} color="white" />
+                    <Text style={styles.buttonText}>Cerrar Sesión</Text>
+                </TouchableOpacity>
+            </View>
+
+            <StatusBar style="black" hidden={false} />
         </View>
     );
 };
@@ -56,25 +58,31 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#538a95',
+        backgroundColor: '#2A2D34',
         paddingHorizontal: 16,
     },
     text: {
         fontSize: 30,
         color: 'white',
         marginBottom: 20,
+        marginTop: 20,
+        fontWeight: "bold",
     },
     fixToText: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         width: '100%',
         marginBottom: 10,
+        paddingTop: 20,
+        paddingBottom: 20,
+        backgroundColor: "#3E4C59",
+        borderRadius: 15,
     },
     button: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 170,
+        width: 210,
         height: 50,
         paddingVertical: 10,
         borderRadius: 8,
